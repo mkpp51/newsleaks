@@ -1,0 +1,128 @@
+python manage.py shell
+
+from news.manage import *
+
+
+1.Создать двух пользователей (с помощью метода User.objects.create_user('username')).
+
+us1 = User.objects.create_user('Ivan')
+
+us2 = User.objects.create_user('Petr')
+
+
+2. Создать два объекта модели Author, связанные с пользователями.
+
+Author.objects.create(auth_user=us1)
+
+Author.objects.create(auth_user=us2)
+
+
+3. Добавить 4 категории в модель Category.
+
+Category.objects.create(cat_name='Politics')
+
+Category.objects.create(cat_name='Sport')
+
+Category.objects.create(cat_name='Economics')
+
+Category.objects.create(cat_name='IT')
+
+
+4. Добавить 2 статьи и 1 новость.
+
+author1 = Author.objects.get(id=1)
+
+author2 = Author.objects.get(id=2)
+
+Post.objects.create(post_auth=author1, post_type='AR', post_header='Introducing a New Sliding Scale Membership', post_text='The Python Software Foundation (PSF) has made a sliding scale option available for Supporting Membership, because we want to make membership more accessible for more people and to increase the size and diversity of our voting membership.')
+
+Post.objects.create(post_auth=author2, post_type='AR', post_header='Brothers row. Russian Far East ports', post_text='Russian local media say many cargo ships at present clogged up Vladivostok Port, Primorye, Russian Far East, mainly amassed at port’s anchorage zones.')
+
+Post.objects.create(post_auth=author1, post_type='NS', post_header='Silent protests, controversial goals, and shock exits: The big World Cup talking points', post_text='With the FIFA World Cup on a brief hiatus before the quarterfinals kick off on Friday, an opportunity has been afforded to take stock of the various narratives, scandals, and moments of magic which have grabbed the headlines over the past couple of weeks in Qatar.')
+
+
+5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+
+Post.objects.get(id=1).post_cat.add(Category.objects.get(id=4))
+
+Post.objects.get(id=2).post_cat.add(Category.objects.get(id=1))
+
+Post.objects.get(id=2).post_cat.add(Category.objects.get(id=3))
+
+Post.objects.get(id=3).post_cat.add(Category.objects.get(id=2))
+
+
+6. Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+
+Comment.objects.create(com_post=Post.objects.get(id=1), read_user=Author.objects.get(id=1).auth_user, com_text='great news!')
+
+Comment.objects.create(com_post=Post.objects.get(id=2), read_user=Author.objects.get(id=2).auth_user, com_text='we need bigger port!')
+
+Comment.objects.create(com_post=Post.objects.get(id=3), read_user=Author.objects.get(id=2).auth_user, com_text='summer world cup at winter, huh?')
+
+Comment.objects.create(com_post=Post.objects.get(id=1), read_user=Author.objects.get(id=2).auth_user, com_text='cool')
+
+Comment.objects.create(com_post=Post.objects.get(id=2), read_user=Author.objects.get(id=1).auth_user, com_text='stop burning fuel!safe our planet!')
+
+Comment.objects.create(com_post=Post.objects.get(id=3), read_user=Author.objects.get(id=1).auth_user, com_text='qatar is great')
+
+
+7. Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+
+Post.objects.get(id=1).like()
+
+Post.objects.get(id=1).dislike()
+
+Post.objects.get(id=2).like()
+
+Post.objects.get(id=3).like()
+
+Comment.objects.get(id=1).like()
+
+Comment.objects.get(id=1).dislike()
+
+Comment.objects.get(id=2).like()
+
+Comment.objects.get(id=3).like()
+
+
+8. Обновить рейтинги пользователей.
+
+au1 = Author.objects.get(id=1)
+
+au1.update_rating()
+
+au2 = Author.objects.get(id=2)
+
+au2.update_rating()
+
+
+9. Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+
+top_us = Author.objects.order_by('-auth_rating')[:1]
+for i in top_us:
+    i.auth_rating
+    i.auth_user.username
+
+
+10. Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+
+top_post = Post.objects.order_by('-post_rating')[:1]
+
+for p in top_post:
+    p.post_pub_date
+    p.post_auth.auth_user
+    p.post_rating
+    p.post_header
+    p.post_preview()
+
+
+11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+
+top_post_com = Comment.objects.filter(com_post=3)
+
+for c in top_post_com:
+    c.com_pub_date
+    c.read_user
+    c.com_rating
+    c.com_text
