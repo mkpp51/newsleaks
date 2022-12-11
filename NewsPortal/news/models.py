@@ -54,6 +54,9 @@ class Post(models.Model):
     def post_preview(self):
         return f'{self.post_text[:125]}...'
 
+    def __str__(self):
+        return f'{self.post_header}: {self.post_text}'
+
 
 class PostCategory(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

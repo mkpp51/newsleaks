@@ -1,0 +1,16 @@
+{% extends 'fpages/default.html' %}
+
+{% load custom_filters %}!
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+<h1>
+    <p>{{ post.post_header|censor }}</p>
+</h1>
+<hr>
+    <p>{{ post.post_pub_date|date:'d M Y' }}</p>
+    <p>{{ post.post_text|censor }}</p>
+{% endblock content %}
