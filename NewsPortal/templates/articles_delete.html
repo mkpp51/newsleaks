@@ -1,0 +1,11 @@
+{% extends 'fpages/default.html' %}
+
+{% block content %}
+<h1>Delete an article</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Delete "{{ object.post_header }}"?</p>
+    <input type="submit" value="Delete" />
+</form>
+{% endblock content %}

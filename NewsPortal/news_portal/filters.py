@@ -6,13 +6,13 @@ from .models import Post
 class PostFilter(FilterSet):
     post_header = CharFilter(
         'post_header',
-        label='Contain words in header:',
+        label='Contains words in header:',
         lookup_expr='icontains',
     )
 
     post_text = CharFilter(
         'post_text',
-        label='Contain words text:',
+        label='Contains words text:',
         lookup_expr='icontains',
     )
 

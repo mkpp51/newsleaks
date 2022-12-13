@@ -39,7 +39,7 @@ class NewsCreate(CreateView):
 class ArticlesCreate(CreateView):
     form_class = PostForm
     model = Post
-    template_name = 'article_create.html'
+    template_name = 'articles_create.html'
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -61,7 +61,7 @@ class NewsEdit(UpdateView):
 class ArticlesEdit(UpdateView):
     form_class = PostForm
     model = Post
-    template_name = 'article_edit.html'
+    template_name = 'articles_edit.html'
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -74,26 +74,16 @@ class NewsDelete(DeleteView):
     template_name = 'news_delete.html'
     success_url = '/news_portal/'
 
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.post_type = 'NS'
-        return super().form_valid(form)
-
 
 class ArticlesDelete(DeleteView):
     model = Post
-    template_name = 'article_delete.html'
+    template_name = 'articles_delete.html'
     success_url = '/news_portal/'
-
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.post_type = 'AR'
-        return super().form_valid(form)
 
 
 class PostSearch(ListView):
     model = Post
-    template_name = 'news_search.html'
+    template_name = 'post_search.html'
     context_object_name = 'search'
     queryset = Post.objects.order_by('-post_pub_date')
     paginate_by = 10
