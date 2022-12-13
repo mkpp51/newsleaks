@@ -2,8 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/templatetags/custom_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/static/assets/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/static/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/article_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/article_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/news_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/news_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/news_portal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/news_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/post_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/templatetags/custom_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/fpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/fpages/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/news.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/setuptools/discovery.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/setuptools/discovery.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

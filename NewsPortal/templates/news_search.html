@@ -1,0 +1,42 @@
+{% extends 'fpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+{% block content %}
+<h1>Post search</h1>
+
+<form action="" method="GET">
+    {{ filter.form }}
+    <input type="submit" value="Search">
+</form>
+<hr>
+        <table>
+            <tr>
+            <td>Header</td>
+            <td>Publication date</td>
+            <td>Text</td>
+            <td>Post author</td>
+        </tr>
+            {% for new in filter.qs %}
+                <tr>
+                    <td> <p style="text-align: right;">
+                        {{ new.post_header|censor }}
+                    </p></td>
+                    <td>
+                        {{ new.post_pub_date|date:'d M Y' }}
+                    </td>
+                    <td> <p style="text-align: left;">
+                        {{ new.post_text|truncatewords:20|censor }}
+                    </p></td>
+                    <td>
+                        {{ new.post_auth }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+{% endblock content %}
