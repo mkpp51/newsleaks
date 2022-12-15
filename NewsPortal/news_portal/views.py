@@ -1,6 +1,10 @@
 from datetime import datetime
 
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from .filters import PostFilter
 from .forms import PostForm
@@ -47,10 +51,11 @@ class ArticlesCreate(CreateView):
         return super().form_valid(form)
 
 
-class NewsEdit(UpdateView):
+class ProtectedNewsEdit(LoginRequiredMixin, UpdateView):
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
+    raise_exception = True
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -58,10 +63,11 @@ class NewsEdit(UpdateView):
         return super().form_valid(form)
 
 
-class ArticlesEdit(UpdateView):
+class ProtectedArticlesEdit(LoginRequiredMixin, UpdateView):
     form_class = PostForm
     model = Post
     template_name = 'articles_edit.html'
+    raise_exception = True
 
     def form_valid(self, form):
         post = form.save(commit=False)
