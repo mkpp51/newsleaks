@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from .filters import PostFilter
@@ -26,7 +26,8 @@ class PostDetail(DetailView):
     context_object_name = 'post'
 
 
-class NewsCreate(CreateView):
+class NewsCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post')
     form_class = PostForm
     model = Post
     template_name = 'news_create.html'
@@ -37,7 +38,8 @@ class NewsCreate(CreateView):
         return super().form_valid(form)
 
 
-class ArticlesCreate(CreateView):
+class ArticlesCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post',)
     form_class = PostForm
     model = Post
     template_name = 'articles_create.html'
@@ -48,7 +50,8 @@ class ArticlesCreate(CreateView):
         return super().form_valid(form)
 
 
-class ProtectedNewsEdit(LoginRequiredMixin, UpdateView):
+class ProtectedNewsEdit(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post',)
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
@@ -60,7 +63,8 @@ class ProtectedNewsEdit(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class ProtectedArticlesEdit(LoginRequiredMixin, UpdateView):
+class ProtectedArticlesEdit(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post',)
     form_class = PostForm
     model = Post
     template_name = 'articles_edit.html'
@@ -72,13 +76,15 @@ class ProtectedArticlesEdit(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class NewsDelete(DeleteView):
+class NewsDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = 'news_delete.html'
     success_url = '/news_portal/'
 
 
-class ArticlesDelete(DeleteView):
+class ArticlesDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = 'articles_delete.html'
     success_url = '/news_portal/'
