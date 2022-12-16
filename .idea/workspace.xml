@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/protect/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/sign/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/account/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/protect/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/sign/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/sign/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/sign/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/fpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/fpages/default.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670939007012</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="-">
+      <created>1671109450220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671109450220</updated>
+    </task>
+    <task id="LOCAL-00007" summary="-">
+      <created>1671109489211</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671109489211</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
