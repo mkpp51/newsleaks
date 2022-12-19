@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/templates/appointment_created.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/templates/make_appointment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/appointments/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,11 +130,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="34ed9893-0131-4f7b-afc8-8338ea161271">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/ilyaFm/Documents/GitHub/newsleaks/NewsPortal/appointments/templates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="34ed9893-0131-4f7b-afc8-8338ea161271" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
