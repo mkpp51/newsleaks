@@ -7,13 +7,11 @@ Post
 {% endblock title %}
 
 {% block content %}
-<h1>
-    <p> {{ post.post_header|censor }} </p>
-</h1>
+<h2> {{ post.post_header|censor }} </h2>
 <hr>
 
     <p> {{ post.post_pub_date|date:'d M Y' }} </p>
-    <p> <a href="{{ category.get_url}}"> {{ post.post_cat.all}} </a> </p>
+    <p> {{ post.post_cat.all}} </p>
     <p> {{ post.post_text|censor }} </p>
 
 {% endblock content %}

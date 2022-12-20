@@ -1,0 +1,10 @@
+<h3 style="text-align: right;"><span style="text-decoration: underline;">Subscribe for newsletters</span></h3>
+<h3 style="text-align: right;"><span style="text-decoration: underline;">of this category</span></h3>
+
+<p style="text-align: right;"><em>By subscribing you will get the latest news weekly.</em></p>
+
+<form action="{% url 'subscribe' %}" method="POST" class="w3layouts-newslatter" style="text-align: right;">
+    {% csrf_token %}}
+    {{ subscribe_form }}
+   <button type="submit">Subscribe!</button>
+</form>

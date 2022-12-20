@@ -2,6 +2,7 @@
 
 {% load custom_filters %}!
 {% load custom_tags %}
+{% load subscribe_tags %}
 
 {% block title %}
 Category
@@ -9,9 +10,10 @@ Category
 {% block content %}
 
 <h1> Posts in category "{{ category }}" </h1>
+
+{% subscribe_form %}
 <hr>
     <ul>
-        {% for category in news_portal %}
             {% if id_category == post_category %}
                 <tr>
                     <td>{{ post.post_header|censor }}</td>
@@ -21,7 +23,6 @@ Category
             {% else %}
                 No Posts in this Category!
             {% endif %}
-        {% endfor %}
     </ul>
 
 {% endblock content %}

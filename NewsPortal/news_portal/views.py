@@ -19,7 +19,6 @@ def post_category(request, id_category: int):
     return render(request, 'post_category.html', {'category': category})
 
 
-
 class PostList(ListView):
     model = Post
     template_name = 'news_portal.html'
