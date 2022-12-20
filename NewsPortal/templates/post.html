@@ -12,5 +12,6 @@ Post
 </h1>
 <hr>
     <p>{{ post.post_pub_date|date:'d M Y' }}</p>
+    <p>{{ post.post_cat }}</p>
     <p>{{ post.post_text|censor }}</p>
 {% endblock content %}

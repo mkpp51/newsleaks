@@ -21,7 +21,7 @@ News Portal
 
         {% for post in news_portal %}
         <tr>
-            <td>{{ post.post_header|censor }}</td>
+            <td><a href="{% url 'post_detail' post.id %}">{{ post.post_header|censor }}</td>
             <td>{{ post.post_pub_date|date:'d M Y' }} </td>
             <td>{{ post.post_text|truncatewords:20|censor }}</td>
         </tr>

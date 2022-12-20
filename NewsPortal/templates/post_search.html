@@ -19,6 +19,7 @@ Search
             <td>Header</td>
             <td>Publication date</td>
             <td>Text</td>
+            <td>Category</td>
             <td>Post author</td>
         </tr>
             {% for new in filter.qs %}
@@ -32,6 +33,9 @@ Search
                     <td> <p style="text-align: left;">
                         {{ new.post_text|truncatewords:20|censor }}
                     </p></td>
+                    <td>
+                        {{ new.post_cat }}
+                    </td>
                     <td>
                         {{ new.post_auth }}
                     </td>

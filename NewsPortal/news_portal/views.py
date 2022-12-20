@@ -106,3 +106,4 @@ class PostSearch(ListView):
         context['authors'] = Author.objects.all()
         context['form'] = PostForm()
         return context
+
