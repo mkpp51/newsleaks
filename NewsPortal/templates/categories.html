@@ -10,7 +10,7 @@ Categories
 <hr>
     <ul>
         {% for category in categories %}
-            <li> {{ category }} </li>
+            <li> <a href="{% url 'category' category.id %}"> {{ category }} </li>
         {% endfor %}
     </ul>
 
