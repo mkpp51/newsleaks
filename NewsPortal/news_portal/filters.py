@@ -16,12 +16,6 @@ class PostFilter(FilterSet):
         lookup_expr='icontains',
     )
 
-    post_cat = CharFilter(
-        'post_cat',
-        label='Post category #:',
-        lookup_expr='exact',
-    )
-
     datetime = DateFilter(
         field_name='post_pub_date',
         widget=DateInput(attrs={'type': 'date'}),

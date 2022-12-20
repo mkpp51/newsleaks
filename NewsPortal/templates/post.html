@@ -8,10 +8,12 @@ Post
 
 {% block content %}
 <h1>
-    <p>{{ post.post_header|censor }}</p>
+    <p> {{ post.post_header|censor }} </p>
 </h1>
 <hr>
-    <p>{{ post.post_pub_date|date:'d M Y' }}</p>
-    <p>{{ post.post_cat }}</p>
-    <p>{{ post.post_text|censor }}</p>
+
+    <p> {{ post.post_pub_date|date:'d M Y' }} </p>
+    <p> {{ post.post_cat.all}} </p>
+    <p> {{ post.post_text|censor }} </p>
+
 {% endblock content %}

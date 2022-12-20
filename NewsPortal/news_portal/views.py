@@ -1,11 +1,23 @@
 from datetime import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .filters import PostFilter
 from .forms import PostForm
-from .models import Post, Category, Author
+from .models import Post, Author, Category
+
+
+def all_post_categories(request):
+    categories = Category.objects.all()
+    return render(request, 'categories.html', {'categories': categories})
+
+
+def post_category(request, id_category: int):
+    category = get_object_or_404(Category, id=id_category)
+    return render(request, 'post_category.html', {'category': category})
+
 
 
 class PostList(ListView):
@@ -106,4 +118,3 @@ class PostSearch(ListView):
         context['authors'] = Author.objects.all()
         context['form'] = PostForm()
         return context
-

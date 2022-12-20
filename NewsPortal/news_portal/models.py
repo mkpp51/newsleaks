@@ -48,7 +48,7 @@ class Post(models.Model):
     post_rating = models.SmallIntegerField(default=0)
 
     post_auth = models.ForeignKey(Author, on_delete=models.CASCADE)
-    post_cat = models.ForeignKey(Category, on_delete=models.PROTECT, null=True)
+    post_cat = models.ManyToManyField(Category, through='PostCategory')
 
     def like(self):
         self.post_rating += 1
@@ -66,6 +66,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
+
+
+class PostCategory(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
 class Comment(models.Model):
