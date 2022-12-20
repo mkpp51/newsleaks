@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/post_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/post_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/news_portal.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/news_portal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/post.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671545160278</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="-">
+      <created>1671545576604</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671545576604</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

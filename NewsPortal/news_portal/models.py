@@ -30,6 +30,9 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.cat_name}'
 
+    def get_url(self):
+        return reverse('category', args=[self.id])
+
 
 news = 'NS'
 article = 'AR'
@@ -64,8 +67,8 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.post_header}: {self.post_text}'
 
-    def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+    def get_url(self):
+        return reverse('post_detail', args=[self.id])
 
 
 class PostCategory(models.Model):
