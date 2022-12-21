@@ -8,14 +8,16 @@ Category
 {% endblock title %}
 {% block content %}
 
-<h1> Posts in category "{{ category }}" </h1>
-
-{% subscribe_form %}
+<h1> Posts in category "{{ category }}": </h1>
 
 <hr>
 <ul>
     {% for post in category.post_set.all %}
-    <li><a href="{{ post.get_url }}"> {{ post.post_header|censor }} </a></li>
+    <li><h2><a href="{{ post.get_url }}"> {{ post.post_header|censor }} </a></h2></li>
     {% endfor %}
 </ul>
+
+<hr>
+{% subscribe_form %}
+
 {% endblock content %}
