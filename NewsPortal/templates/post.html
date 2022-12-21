@@ -10,10 +10,11 @@ Post
 <h2> {{ post.post_header|censor }} </h2>
 <hr>
 
-    <p> {{ post.post_pub_date|date:'d M Y' }} </p>
+    <p> Publication date: {{ post.post_pub_date|date:'d M Y' }} </p>
     {% for category in post.post_cat.all %}
-    <p><a href="{{ category.get_url }}">  {{ category.cat_name }} </a></p>
+    <p>Category: <a href="{{ category.get_url }}">  {{ category.cat_name }} </a></p>
     {% endfor %}
     <p> {{ post.post_text|censor }} </p>
+    <p> Author: {{ post.post_auth }} </p>
 
 {% endblock content %}
