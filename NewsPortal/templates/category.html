@@ -1,0 +1,21 @@
+{% extends 'fpages/default.html' %}
+
+{% load custom_filters %}!
+{% load subscribe_tags %}
+
+{% block title %}
+Category
+{% endblock title %}
+{% block content %}
+
+<h1> Posts in category "{{ category }}" </h1>
+
+{% subscribe_form %}
+
+<hr>
+<ul>
+    {% for post in category.post_set.all %}
+    <li><a href="{{ post.get_url }}"> {{ post.post_header|censor }} </a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

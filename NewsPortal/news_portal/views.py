@@ -9,14 +9,14 @@ from .forms import PostForm
 from .models import Post, Author, Category
 
 
-def all_post_categories(request):
+def all_categories(request):
     categories = Category.objects.all()
     return render(request, 'categories.html', {'categories': categories})
 
 
-def post_category(request, id_category: int):
+def category(request, id_category: int):
     category = get_object_or_404(Category, id=id_category)
-    return render(request, 'post_category.html', {'category': category})
+    return render(request, 'category.html', {'category': category})
 
 
 class PostList(ListView):

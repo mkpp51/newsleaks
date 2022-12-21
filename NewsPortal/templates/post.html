@@ -11,7 +11,9 @@ Post
 <hr>
 
     <p> {{ post.post_pub_date|date:'d M Y' }} </p>
-    <p> {{ post.post_cat.all}} </p>
+    {% for category in post.post_cat.all %}
+    <p><a href="{{ category.get_url }}">  {{ category.cat_name }} </a></p>
+    {% endfor %}
     <p> {{ post.post_text|censor }} </p>
 
 {% endblock content %}

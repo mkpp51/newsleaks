@@ -14,6 +14,6 @@ urlpatterns = [
    path('articles/<int:pk>/edit/', ProtectedArticlesEdit.as_view(), name='articles_edit'),
    path('articles/<int:pk>/delete/', ArticlesDelete.as_view(), name='Articles_delete'),
    path('search/', PostSearch.as_view(), name='post_search'),
-   path('categories/', views.all_post_categories, name='categories'),
-   path('categories/<int:id_category>', views.post_category, name='category'),
+   path('categories/', views.all_categories, name='categories'),
+   path('categories/<int:id_category>', views.category, name='category'),
    ]
