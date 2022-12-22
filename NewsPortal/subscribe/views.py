@@ -1,8 +1,8 @@
-from django.core.mail import send_mail, mail_managers
 from django.views.generic import CreateView
 
 from .models import Subscribe
 from .forms import SubscribeForm
+from .service import send
 
 
 class SubscribeView(CreateView):
@@ -10,11 +10,10 @@ class SubscribeView(CreateView):
     form_class = SubscribeForm
     success_url = '/'
 
+    def form_valid(self, form):
+        form.save()
+        send(form.instance.email)
+        return super().form_valid(form)
 
-send_mail(
-    'Successful subscription',
-    'Congratulations! You have subscribed for the newsletters!',
-    'fam.ilya51@yandex.ru',
-    ['morjakpapaj51@gmail.com'],
-    fail_silently=False,
-)
+
+

@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/NewsPortal/subscribe/service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/scheduler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/signals.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/subscribe/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/tags/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/subscribe/tags/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,7 +41,8 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyaFm/Documents/GitHub/newsleaks&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyaFm/Documents/GitHub/newsleaks&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="ReadonlyStatusHandler">
@@ -172,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671640722408</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="-">
+      <created>1671644837724</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671644837726</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
