@@ -1,7 +1,6 @@
 {% extends 'fpages/default.html' %}
 
 {% load custom_filters %}!
-{% load subscribe_tags %}
 
 {% block title %}
 Category
@@ -18,6 +17,6 @@ Category
 </ul>
 
 <hr>
-{% subscribe_form %}
+    <p><button><a href="{% url 'add_subscriber' category.id %}"><u> Subscribe! </u></a></button></p>
 
 {% endblock content %}

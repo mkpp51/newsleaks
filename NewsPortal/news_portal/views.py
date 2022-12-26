@@ -1,12 +1,27 @@
 from datetime import datetime
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from .filters import PostFilter
 from .forms import PostForm
 from .models import Post, Author, Category
+
+
+@method_decorator(login_required, name='dispatch')
+class ProtectedView(TemplateView):
+    template_name = 'protected_page.html'
+
+
+@login_required
+def add_subscriber(request, id_category: int):
+    category_id = get_object_or_404(Category, id=id_category)
+    print('*************', category_id)
+    Category.objects.get(pk=category_id).subscribers.add(request.user)
+    return redirect('/')
 
 
 def all_categories(request):

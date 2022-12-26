@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 from .views import PostList, PostDetail, NewsCreate, ProtectedNewsEdit, NewsDelete, ArticlesCreate, \
-   ProtectedArticlesEdit, ArticlesDelete, PostSearch
+   ProtectedArticlesEdit, ArticlesDelete, PostSearch, add_subscriber
 
 urlpatterns = [
    path('', PostList.as_view()),
@@ -16,4 +16,5 @@ urlpatterns = [
    path('search/', PostSearch.as_view(), name='post_search'),
    path('categories/', views.all_categories, name='categories'),
    path('categories/<int:id_category>', views.category, name='category'),
+   path('categories/<int:id_category>/add_subscriber/', add_subscriber, name='add_subscriber'),
    ]
