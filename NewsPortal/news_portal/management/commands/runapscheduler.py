@@ -1,20 +1,51 @@
 import logging
+from datetime import datetime, timedelta
 
 from django.conf import settings
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
+from django.core.mail import send_mail
 from django.core.management.base import BaseCommand
 from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 from django_apscheduler import util
+
+from news_portal.models import Category, Post
 
 logger = logging.getLogger(__name__)
 
 
 def my_job():
     # Your job processing logic here...
-    pass
+    emails = {}
+    week_ago = datetime.now() - timedelta(days=7)
+    url = 'http://127.0.0.1:8000'
+    logger.info('starting job')
+
+    for category in Category.objects.all():
+        _category = category.cat_name.title()
+        articles = Post.objects.filter(post_cat=category,
+                                       post_pub_date__gte=week_ago)
+        logger.info(f'found articles in {category}\n{articles}')
+        if not articles:
+            continue
+        for user in category.subscribers.all():
+            if user not in emails:
+                emails[user] = {}
+            if _category not in emails[user]:
+                emails[user][_category] = set()
+            emails[user][_category].update(articles)
+    logger.info('sending mail', emails)
+
+    for user, categories in emails.items():
+        message = []
+        for category, articles in categories.items():
+            message.extend((category, *(
+                f'{article.post_header}: {url}/{article.get_absolute_url()}'
+                for article in articles)))
+        send_mail('New articles of this week', '\n'.join(message), None,
+                  [user.email])
 
 
 # The `close_old_connections` decorator ensures that database connections, that have become

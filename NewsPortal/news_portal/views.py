@@ -3,6 +3,8 @@ from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.mail import send_mail
+from django.db.models.signals import post_save, m2m_changed
+from django.dispatch import receiver
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
@@ -63,71 +65,21 @@ class PostDetail(DetailView):
 
 
 class NewsCreate(PermissionRequiredMixin, CreateView):
-    permission_required = ('news.add_post')
+    permission_required = ('news.add_post', )
     form_class = PostForm
     model = Post
     template_name = 'news_create.html'
 
-    # def form_valid(self, form):
-    #     response = super().form_valid(form)
-    #     post = form.save(commit=False)
-    #     post.post_type = 'NS'
-        # post = self.object
-        # post_url = f'http://127.0.0.1:8000/{post.get_absolute_url()}'
-        # categories = post.post_cat.all()
-        # subscribers_emails = []
-        # category_name = []
-        # for category in categories:
-        #     category_name.append(category.cat_name)
-        #     subscribers = category.subscribers.all()
-        #     subscribers_emails = [user.email for user in subscribers]
-        #
-        # send_mail(
-        #     subject=f'NEWSPORTAL. New publication!',
-        #     message=f'There is new publication in your favorite {category_name} category:\n'
-        #             f'{post.post_text[:50]}...'
-        #             f'Follow the link:\n{post_url}',
-        #     from_email=settings.SERVER_EMAIL,
-        #     recipient_list=subscribers_emails
-        # )
-
-        # return response
-
 
 class ArticlesCreate(PermissionRequiredMixin, CreateView):
-    permission_required = ('news.add_post',)
+    permission_required = ('news.add_post', )
     form_class = PostForm
     model = Post
     template_name = 'articles_create.html'
 
-    # def form_valid(self, form):
-    #     response = super().form_valid(form)
-    #     post = form.save(commit=False)
-    #     post.post_type = 'AR'
-        # post = self.object
-        # post_url = f'http://127.0.0.1:8000/{post.get_absolute_url()}'
-        # categories = post.post_cat.all()
-        # subscribers_emails = []
-        # category_name = []
-        # for category in categories:
-        #     category_name.append(category.cat_name)
-        #     subscribers = category.subscribers.all()
-        #     subscribers_emails = [user.email for user in subscribers]
-        #
-        # send_mail(
-        #     subject=f'NEWSPORTAL. New publication!',
-        #     message=f'There is new publication in your favorite {category_name} category:\n'
-        #             f'{post.post_text[:50]}...'
-        #             f'Follow the link:\n{post_url}',
-        #     from_email=settings.SERVER_EMAIL,
-        #     recipient_list=subscribers_emails
-        # )
-
-        # return response
-
 
 class ProtectedNewsEdit(PermissionRequiredMixin, UpdateView):
-    permission_required = ('news.change_post',)
+    permission_required = ('news.change_post', )
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
@@ -140,7 +92,7 @@ class ProtectedNewsEdit(PermissionRequiredMixin, UpdateView):
 
 
 class ProtectedArticlesEdit(PermissionRequiredMixin, UpdateView):
-    permission_required = ('news.change_post',)
+    permission_required = ('news.change_post', )
     form_class = PostForm
     model = Post
     template_name = 'articles_edit.html'
@@ -153,14 +105,14 @@ class ProtectedArticlesEdit(PermissionRequiredMixin, UpdateView):
 
 
 class NewsDelete(PermissionRequiredMixin, DeleteView):
-    permission_required = ('news.delete_post',)
+    permission_required = ('news.delete_post', )
     model = Post
     template_name = 'news_delete.html'
     success_url = '/news_portal/'
 
 
 class ArticlesDelete(PermissionRequiredMixin, DeleteView):
-    permission_required = ('news.delete_post',)
+    permission_required = ('news.delete_post', )
     model = Post
     template_name = 'articles_delete.html'
     success_url = '/news_portal/'
