@@ -1,7 +1,9 @@
 from allauth.account.forms import SignupForm
+from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
 from django import forms
+from django.core.mail import send_mail
 
 
 class BaseRegisterForm(UserCreationForm):

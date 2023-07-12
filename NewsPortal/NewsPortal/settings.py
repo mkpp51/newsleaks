@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'news_portal',
+
+    'news_portal.apps.NewsPortalConfig',
     'django_filters',
 
     'sign',
@@ -52,9 +52,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'django_apscheduler',
+
 ]
 
-DEFAULT_FROM_EMAIL = 'fam.ilya51@yandex.ru'
+DEFAULT_FROM_EMAIL = 'news.p0rtal@yandex.ru'
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 SITE_ID = 1
 
@@ -141,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -150,18 +152,17 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'fam.ilya51'
-EMAIL_HOST_PASSWORD = 'ndsdepamyojuxfya'
+EMAIL_HOST_USER = 'news.p0rtal@yandex.ru'
+EMAIL_HOST_PASSWORD = 'bbzujpojczswqado'
 EMAIL_USE_SSL = True
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

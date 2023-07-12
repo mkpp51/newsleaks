@@ -15,6 +15,6 @@ urlpatterns = [
    path('articles/<int:pk>/delete/', ArticlesDelete.as_view(), name='Articles_delete'),
    path('search/', PostSearch.as_view(), name='post_search'),
    path('categories/', views.all_categories, name='categories'),
-   path('categories/<int:id_category>', views.category, name='category'),
-   path('categories/<int:id_category>/add_subscriber/', add_subscriber, name='add_subscriber'),
+   path('categories/<str:category>', views.category, name='category'),
+   path('categories/<str:category>/add_subscriber/', add_subscriber, name='add_subscriber'),
    ]

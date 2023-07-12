@@ -2,33 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/migrations/0002_category_subscribers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/migrations/0003_alter_category_subscribers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/account/email/email_confirmation_subject.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/management/commands/runapscheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/management/commands/runapscheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/tasks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/templatetags/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/templatetags/subscribe_tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/subscribe/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/sign/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/sign/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/sign/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/sign/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/sign/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/sign/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed_letter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/tags/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/protect/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/templates/protect/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/templates/subscribe/subscribed_letter.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -54,17 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyaFm/Documents/GitHub/newsleaks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ilyaFm/Desktop/PYTHON/NewsPaper-main",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ilyaFm\Documents\GitHub\newsleaks\NewsPortal\templates\account\email" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -208,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671712452605</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="-">
+      <created>1672041462917</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1672041462917</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

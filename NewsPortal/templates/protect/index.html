@@ -2,11 +2,6 @@
 
 {% block content %}
 <h2> Authorised user {{request.user.username}} </h2>
-<div> Personal information: </div>
-
-{% if is_not_author %}
-<button> <a href="sign/upgrade/"> Wanna become an author? </a> </button>
-{% endif %}
-
+<hr>
 <button> <a href="sign/logout/"> Log out </a> </button>
 {% endblock %}

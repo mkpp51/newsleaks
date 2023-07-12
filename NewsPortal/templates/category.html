@@ -17,6 +17,7 @@ Category
 </ul>
 
 <hr>
-    <p><button><a href="{% url 'add_subscriber' category.id %}"><u> Subscribe! </u></a></button></p>
+    <h4 style="text-align: right;"> Subscribe for news of this category:</h4>
+    <p style="text-align: right;"><button><a href="{% url 'add_subscriber' category.cat_name %}"><u> Subscribe! </u></a></button></p>
 
 {% endblock content %}

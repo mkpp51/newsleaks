@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models import Sum
+from django.db.models import Sum, TextField
 from django.urls import reverse
 
 
@@ -26,13 +26,13 @@ class Author(models.Model):
 
 class Category(models.Model):
     cat_name = models.CharField(max_length=100, unique=True)
-    subscribers = models.ManyToManyField(User, max_length=50, blank=True)
+    subscribers = models.ManyToManyField(User, through='SubscribedUsersCategory')
 
     def __str__(self):
         return f'{self.cat_name}'
 
     def get_url(self):
-        return reverse('category', args=[self.id])
+        return reverse('category', args=[self.cat_name])
 
 
 news = 'NS'
@@ -71,6 +71,9 @@ class Post(models.Model):
     def get_url(self):
         return reverse('post_detail', args=[self.id])
 
+    def get_absolute_url(self) -> str:
+        return f'/news_portal/{self.id}'
+
 
 class PostCategory(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -91,3 +94,8 @@ class Comment(models.Model):
     def dislike(self):
         self.com_rating -= 1
         self.save()
+
+
+class SubscribedUsersCategory(models.Model):
+    subscribers = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)

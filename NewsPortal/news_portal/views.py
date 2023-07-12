@@ -2,10 +2,12 @@ from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
+from NewsPortal import settings
 from .filters import PostFilter
 from .forms import PostForm
 from .models import Post, Author, Category
@@ -17,11 +19,18 @@ class ProtectedView(TemplateView):
 
 
 @login_required
-def add_subscriber(request, id_category: int):
-    category_id = get_object_or_404(Category, id=id_category)
-    print('*************', category_id)
-    Category.objects.get(pk=category_id).subscribers.add(request.user)
-    return redirect('/')
+def add_subscriber(request, category: str):
+    Category.objects.get(cat_name=category).subscribers.add(request.user)
+    user = request.user
+
+    send_mail(
+        subject='''NEWSPORTAL. You've successfully subscribed!''',
+        message=f'Hello, {user.username}!\nThank you for subscribing to publications in the category: {category}.',
+        from_email=None,
+        recipient_list=[f'{user.email}', ],
+    )
+
+    return redirect('/news_portal/categories/')
 
 
 def all_categories(request):
@@ -29,8 +38,8 @@ def all_categories(request):
     return render(request, 'categories.html', {'categories': categories})
 
 
-def category(request, id_category: int):
-    category = get_object_or_404(Category, id=id_category)
+def category(request, category: int):
+    category = get_object_or_404(Category, cat_name=category)
     return render(request, 'category.html', {'category': category})
 
 
@@ -38,6 +47,7 @@ class PostList(ListView):
     model = Post
     template_name = 'news_portal.html'
     context_object_name = 'news_portal'
+    ordering = '-post_pub_date'
     paginate_by = 10
 
     def get_queryset(self):
@@ -58,10 +68,30 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
     model = Post
     template_name = 'news_create.html'
 
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.post_type = 'NS'
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     response = super().form_valid(form)
+    #     post = form.save(commit=False)
+    #     post.post_type = 'NS'
+        # post = self.object
+        # post_url = f'http://127.0.0.1:8000/{post.get_absolute_url()}'
+        # categories = post.post_cat.all()
+        # subscribers_emails = []
+        # category_name = []
+        # for category in categories:
+        #     category_name.append(category.cat_name)
+        #     subscribers = category.subscribers.all()
+        #     subscribers_emails = [user.email for user in subscribers]
+        #
+        # send_mail(
+        #     subject=f'NEWSPORTAL. New publication!',
+        #     message=f'There is new publication in your favorite {category_name} category:\n'
+        #             f'{post.post_text[:50]}...'
+        #             f'Follow the link:\n{post_url}',
+        #     from_email=settings.SERVER_EMAIL,
+        #     recipient_list=subscribers_emails
+        # )
+
+        # return response
 
 
 class ArticlesCreate(PermissionRequiredMixin, CreateView):
@@ -70,10 +100,30 @@ class ArticlesCreate(PermissionRequiredMixin, CreateView):
     model = Post
     template_name = 'articles_create.html'
 
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.post_type = 'AR'
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     response = super().form_valid(form)
+    #     post = form.save(commit=False)
+    #     post.post_type = 'AR'
+        # post = self.object
+        # post_url = f'http://127.0.0.1:8000/{post.get_absolute_url()}'
+        # categories = post.post_cat.all()
+        # subscribers_emails = []
+        # category_name = []
+        # for category in categories:
+        #     category_name.append(category.cat_name)
+        #     subscribers = category.subscribers.all()
+        #     subscribers_emails = [user.email for user in subscribers]
+        #
+        # send_mail(
+        #     subject=f'NEWSPORTAL. New publication!',
+        #     message=f'There is new publication in your favorite {category_name} category:\n'
+        #             f'{post.post_text[:50]}...'
+        #             f'Follow the link:\n{post_url}',
+        #     from_email=settings.SERVER_EMAIL,
+        #     recipient_list=subscribers_emails
+        # )
+
+        # return response
 
 
 class ProtectedNewsEdit(PermissionRequiredMixin, UpdateView):

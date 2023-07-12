@@ -27,3 +27,4 @@ class PostForm(forms.ModelForm):
             )
 
         return cleaned_data
+

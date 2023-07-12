@@ -12,7 +12,7 @@ class PostFilter(FilterSet):
 
     post_text = CharFilter(
         'post_text',
-        label='Contains words text:',
+        label='Contains words in text:',
         lookup_expr='icontains',
     )
 
