@@ -3,16 +3,15 @@ from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.mail import send_mail
-from django.db.models.signals import post_save, m2m_changed
-from django.dispatch import receiver
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
-from NewsPortal import settings
 from .filters import PostFilter
 from .forms import PostForm
 from .models import Post, Author, Category
+
+from .tasks import notification_sender
 
 
 @method_decorator(login_required, name='dispatch')
@@ -70,12 +69,26 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
     model = Post
     template_name = 'news_create.html'
 
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.post_type = 'NS'
+        post.save()
+        notification_sender.delay(post.pk)
+        return super().form_valid(form)
+
 
 class ArticlesCreate(PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post', )
     form_class = PostForm
     model = Post
     template_name = 'articles_create.html'
+
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.post_type = 'NS'
+        post.save()
+        notification_sender.delay(post.pk)
+        return super().form_valid(form)
 
 
 class ProtectedNewsEdit(PermissionRequiredMixin, UpdateView):

@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 
 ]
 
-DEFAULT_FROM_EMAIL = 'n3ws.p0rtal@yandex.ru'
+DEFAULT_FROM_EMAIL = 'news.port4l@yandex.ru'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 SITE_ID = 1
@@ -160,8 +160,8 @@ ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'n3ws.p0rtal@yandex.ru'
-EMAIL_HOST_PASSWORD = 'uzficcrgsgdcjdrz'
+EMAIL_HOST_USER = 'news.port4l@yandex.ru'
+EMAIL_HOST_PASSWORD = 'ptdrizakwfwkxmdu'
 EMAIL_USE_SSL = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -185,3 +185,12 @@ APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 # that supports multiple background worker processes instead (e.g. Dramatiq, Celery, Django-RQ,
 # etc. See: https://djangopackages.org/grids/g/workers-queues-tasks/ for popular options).
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
+CELERY_BROKER_URL = 'redis://default:Lt4Gf7jjcmQB5UpKMwfN6l0dElm9645e@redis-13135.c124.us-central1-1.gce.cloud.redislabs.com:13135'
+CELERY_RESULT_BACKEND = 'redis://default:Lt4Gf7jjcmQB5UpKMwfN6l0dElm9645e@redis-13135.c124.us-central1-1.gce.cloud.redislabs.com:13135'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_IMPORTS = ('news_portal.tasks', )
+CELERY_ENABLE_UTC = False
+CELERY_TIMEZONE = 'Europe/Moscow'
