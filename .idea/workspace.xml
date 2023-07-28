@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38de2906-9e20-4395-b0f0-391bfb07c3bc" name="Changes" comment="-">
-      <change afterPath="$PROJECT_DIR$/NewsPortal/cache_files/27c7c53c06c766ad1361cd96534df077.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPortal/cache_files/9362c81cba7fe665a3500e06bf6fc311.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPortal/news_portal/management/commands/delete_all_posts_in_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/error_and_critical.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/general.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/security.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/cache_files/a37cb2f77907b0b93a22fd0090ba903b.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/cache_files/a37cb2f77907b0b93a22fd0090ba903b.djcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/cache_files/bbdbb28a235f548e5fc5ae214f6a4626.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/cache_files/bbdbb28a235f548e5fc5ae214f6a4626.djcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news_portal/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news_portal/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyaFm/Desktop/PYTHON/NewsPaper-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyaFm/Desktop/PYTHON/welcome-to-docker-main&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689847471319</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="-">
+      <created>1689877890879</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689877890879</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
